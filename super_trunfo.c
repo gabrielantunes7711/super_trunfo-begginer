@@ -9,6 +9,8 @@ int main() {
     float area1;
     float gdp1;
     int attractions1;
+    float population_density1;
+    float gdp_per_capita1;
 
     // First card input and output
     printf("Digite as informacoes da primeira carta:\n \n");
@@ -34,14 +36,19 @@ int main() {
     printf("Digite a quantidade de pontos turisticos na cidade: ");
     scanf("%d", &attractions1);
 
+    population_density1 = (float) population1 / area1;
+    gdp_per_capita1 = (float) gdp1 / population1;
+
     printf("\n--- Informacoes da Primeira Carta ---\n");
     printf("Estado: %c\n", state1);
     printf("Codigo da Carta: %s\n", code1);
     printf("Nome da Cidade: %s\n", city1);
     printf("Populacao: %d\n", population1);
-    printf("Area: %.2f\n", area1);
+    printf("Area: %.2f km²\n", area1);
     printf("PIB: %.2f\n", gdp1);
     printf("Numero de Pontos Turisticos: %d\n", attractions1);
+    printf("Densidade Populacional: %.2f hab/km²\n", population_density1);
+    printf("PIB per Capita: %.2f reais\n", gdp_per_capita1);
 
     // Second card status
     char state2;
@@ -51,6 +58,8 @@ int main() {
     float area2;
     float gdp2;
     int attractions2;
+    float population_density2;
+    float gdp_per_capita2;
 
     printf("\n \n ----------------- \n \n");
 
@@ -78,14 +87,19 @@ int main() {
     printf("Digite a quantidade de pontos turisticos na cidade: ");
     scanf("%d", &attractions2);
 
+    population_density2 = (float) population2 / area2;
+    gdp_per_capita2 = (float) gdp2 / population2;
+
     printf("\n--- Informacoes da Segunda Carta ---\n");
     printf("Estado: %c\n", state2);
     printf("Codigo da Carta: %s\n", code2);
     printf("Nome da Cidade: %s\n", city2);
     printf("Populacao: %d\n", population2);
-    printf("Area: %.2f\n", area2);
+    printf("Area: %.2f km²\n", area2);
     printf("PIB: %.2f\n", gdp2);
     printf("Numero de Pontos Turisticos: %d\n", attractions2);
+    printf("Densidade Populacional: %.2f hab/km²\n", population_density2);
+    printf("PIB per Capita: %.2f reais\n", gdp_per_capita2);
 
     return 0;
 }
