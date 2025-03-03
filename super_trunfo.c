@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
     // First card status
@@ -232,6 +234,126 @@ int main() {
     default:
         printf("Opção inválida\n");
         break;
+    }
+
+    unsigned int attibute_choice1, attibute_choice2;
+    char *attribute_name1 = malloc(50 * sizeof(char));
+    char *attribute_name2 = malloc(50 * sizeof(char));
+    float attribute_value1_card1, attribute_value2_card1, attribute_value1_card2, attribute_value2_card2;
+
+    printf("\n--- Comparação da soma de dois atributos: ---\n");
+
+    printf("\n--- Escolha o primeiro atributo: ---\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Número de pontos turísticos\n");
+    printf("5 - Densidade demográfica\n");
+    scanf("%u", &attibute_choice1);
+
+    switch (attibute_choice1)
+    {
+    case 1: 
+        attribute_value1_card1 = population1;
+        attribute_value1_card2 = population2;
+        attribute_name1 = "População";
+       
+        break;
+    case 2: 
+        attribute_value1_card1 = area1;
+        attribute_value1_card2 = area2;
+        attribute_name1 = "Área";
+
+        break;
+    case 3: 
+        attribute_value1_card1 = gdp1;
+        attribute_value1_card2 = gdp2;
+        attribute_name1 = "PIB";
+
+        break;
+    case 4: 
+        attribute_value1_card1 = attractions1;
+        attribute_value1_card2 = attractions2;
+        attribute_name1 = "Número de pontos turísticos";
+
+        break;
+    case 5: 
+        attribute_value1_card1 = population_density1 * -1;
+        attribute_value1_card2 = population_density1 * -1;
+        attribute_name1 = "Densidade demográfica";
+
+        break;
+    default:
+        printf("Opção inválida\n");
+        break;
+    }
+
+    printf("\n--- Escolha o segundo atributo: ---\n");
+    if (attibute_choice1 != 1) printf("1 - População\n");
+    if (attibute_choice1 != 2) printf("2 - Área\n");
+    if (attibute_choice1 != 3) printf("3 - PIB\n");
+    if (attibute_choice1 != 4) printf("4 - Número de pontos turísticos\n");
+    if (attibute_choice1 != 5) printf("5 - Densidade demográfica\n");
+    
+    scanf("%u", &attibute_choice2);
+
+    switch (attibute_choice2)
+    {
+    case 1: 
+        attribute_value2_card1 = population1;
+        attribute_value2_card2 = population2;
+        attribute_name2 = "População";
+       
+        break;
+    case 2: 
+        attribute_value2_card1 = area1;
+        attribute_value2_card2 = area2;
+        attribute_name2 = "Área";
+
+        break;
+    case 3: 
+        attribute_value2_card1 = gdp1;
+        attribute_value2_card2 = gdp2;
+        attribute_name2 = "PIB";
+
+        break;
+    case 4: 
+        attribute_value2_card1 = attractions1;
+        attribute_value2_card2 = attractions2;
+        attribute_name2 = "Número de pontos turísticos";
+
+        break;
+    case 5: 
+        attribute_value2_card1 = population_density1 * -1;
+        attribute_value2_card2 = population_density2 * -1;
+        attribute_name2 = "Densidade demográfica";
+
+        break;
+    default:
+        printf("Opção inválida\n");
+        break;
+    }
+
+    float result1, result2;
+
+    printf("\nResultado da comparação entre %s e %s\n", city1, city2);
+    printf("%s:\n", city1);
+    printf("%s: %.2f\n", attribute_name1, attribute_value1_card1);
+    printf("%s: %.2f\n", attribute_name2, attribute_value2_card1);
+
+    printf("\n%s:\n", city2);
+    printf("%s: %.2f\n", attribute_name1, attribute_value1_card2);
+    printf("%s: %.2f\n", attribute_name2, attribute_value2_card2);
+
+    result1 = attribute_value1_card1 + attribute_value2_card1;
+    result2 = attribute_value1_card2 + attribute_value2_card2;
+
+    if (result1 == result2) {
+       printf("Empate!");
+    } else if (result1 > result2){
+       printf("A carta 1 venceu!");
+    } else {
+       printf("A carta 2 venceu!");
     }
 
     return 0;
